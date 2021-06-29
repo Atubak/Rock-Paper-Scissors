@@ -18,7 +18,7 @@ let randomArrayElement = testArray[Math.floor(Math.random() * testArray.length)]
 */
 
 function computerPlay() {
-    let rpsArray = ["Rock", "Paper", "Scissors"];
+    let rpsArray = ["rock", "paper", "scissors"];
     let computerMove = rpsArray[Math.floor(Math.random() * rpsArray.length)];
     return computerMove;
 }
@@ -40,5 +40,21 @@ Make your function’s playerSelection parameter case-insensitive (so users can 
 
 function playRound (playerSelection, computerSelection) {
     /* test the player's move against the computer's move */
-   
+   if (playerSelection === computerSelection) {
+       return "Wow, It's a tie!";
+   } else if (
+       (playerSelection + computerSelection === "rockscissors") ||
+       (playerSelection + computerSelection === "scissorspaper") || 
+       (playerSelection + computerSelection === "paperrock")
+       ) { 
+        return "Nice, You won!";
+   } else if (
+    (playerSelection + computerSelection === "scissorsrock") ||
+    (playerSelection + computerSelection === "paperscissors") || 
+    (playerSelection + computerSelection === "rockpaper")
+    ) { 
+     return "Damn, you lost!";
+    } else {
+        return "Please make sure you enter one of these moves: Rock, Paper, or Scissors"
+    }
 }
