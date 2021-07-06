@@ -71,7 +71,7 @@ function game () {
     let playerScore = 0
     let computerScore = 0
 
-    console.log(`You now have ${playerScore} points against the computer's ${computerScore}`);
+   /* console.log(`You now have ${playerScore} points against the computer's ${computerScore}`); */
 
     /* assigning the player's move and the computer's move */
     const playerSelection = "rock";
@@ -80,7 +80,7 @@ function game () {
 
 
 
-    function playRound (playerSelection, computerSelection) {
+ function playRound (playerSelection, computerSelection) {
 
     
         console.log(`It's ${playerSelection} versus ${computerSelection}!`);
@@ -94,12 +94,14 @@ function game () {
        (playerSelection + computerSelection === "scissorspaper") || 
        (playerSelection + computerSelection === "paperrock")
        ) { 
+            ++playerScore; /* add the score for this round */
             return "Nice, You won!";
      } else if (
         (playerSelection + computerSelection === "scissorsrock") ||
         (playerSelection + computerSelection === "paperscissors") || 
         (playerSelection + computerSelection === "rockpaper")
         ) { 
+            ++computerScore;
             return "Damn, you lost!";
         } else {
             return "Please make sure you enter one of these moves: Rock, Paper, or Scissors";
@@ -109,25 +111,13 @@ function game () {
     } 
 
 
-    console.log(playRound(playerSelection, computerSelection));
-   
-    
+ console.log(playRound(playerSelection, computerSelection));
+
+
+ console.log(`You now have ${playerScore} points against the computer's ${computerScore}`);
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
