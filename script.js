@@ -57,6 +57,11 @@ function playRound (playerSelection, computerSelection) {
 
 } 
 */
+alert("Welcome to the classic game of Rock, Paper, Scissors!")
+/* write a prompt to get input from the user */
+let userPlay =  window.prompt( "Please write down your move here.")
+
+
 /* Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 */
 
@@ -69,7 +74,8 @@ function game () {
    /* console.log(`You now have ${playerScore} points against the computer's ${computerScore}`); */
 
     /* assigning the player's move and the computer's move */
-    let playerSelection = "rock";
+    let playerSelection = userPlay.toLowerCase();
+    console.log(playerSelection);
     let computerSelection = computerPlay();
 
     console.log("Round 1....... Start!")
@@ -124,8 +130,9 @@ function game () {
  
  
  /* ROUND 2 */
- 
- playerSelection = "rock";
+ userPlay =  window.prompt( "Please write down your move here.")
+
+ playerSelection = userPlay.toLowerCase();
  computerSelection = computerPlay();
 
  console.log("Round 2....... Start!")
@@ -176,8 +183,9 @@ console.log(`You now have ${playerScore} point(s) against the computer's ${compu
  
  
  /* ROUND 3 */
+ userPlay =  window.prompt( "Please write down your move here.")
 
- playerSelection = "rock";
+ playerSelection = userPlay.toLowerCase();
  computerSelection = computerPlay();
 
  console.log("Round 3....... Start!")
@@ -228,8 +236,9 @@ console.log(`You now have ${playerScore} point(s) against the computer's ${compu
  
  
  /* ROUND 4 */
+ userPlay =  window.prompt( "Please write down your move here.")
 
- playerSelection = "rock";
+ playerSelection = userPlay.toLowerCase();
  computerSelection = computerPlay();
 
  console.log("Round 4....... Start!")
@@ -279,8 +288,9 @@ console.log(`You now have ${playerScore} point(s) against the computer's ${compu
  
  
  /* ROUND 5 */
+ userPlay =  window.prompt( "Please write down your move here.")
 
- playerSelection = "rock";
+ playerSelection = userPlay.toLowerCase();
  computerSelection = computerPlay();
 
  console.log("Round 5....... Start!")
