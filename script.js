@@ -28,7 +28,7 @@ Write a function that plays a single round of Rock Paper Scissors. The function 
 Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation).
 */
  
-
+/*
 function playRound (playerSelection, computerSelection) {
 
     
@@ -56,32 +56,28 @@ function playRound (playerSelection, computerSelection) {
     
 
 } 
-
+*/
 /* Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
-
-if playRound() === "wow its a tie", then add a point to both the player and the computer
-
-if playRound() === "nice you won", then add a point only to the player
-
-if playRound() === "damn you lost", then add a point only to the computer
 */
 
 function game () {
 
+    
     let playerScore = 0
     let computerScore = 0
 
    /* console.log(`You now have ${playerScore} points against the computer's ${computerScore}`); */
 
     /* assigning the player's move and the computer's move */
-    const playerSelection = "rock";
-    const computerSelection = computerPlay();
+    let playerSelection = "rock";
+    let computerSelection = computerPlay();
 
 
 
 
  function playRound (playerSelection, computerSelection) {
 
+    
     
         console.log(`It's ${playerSelection} versus ${computerSelection}!`);
 
@@ -115,6 +111,48 @@ function game () {
 
 
  console.log(`You now have ${playerScore} points against the computer's ${computerScore}`);
+
+ playerSelection = "rock";
+ computerSelection = computerPlay();
+
+
+
+ function playRound (playerSelection, computerSelection) {
+
+    
+    console.log(`It's ${playerSelection} versus ${computerSelection}!`);
+
+
+
+ if (playerSelection === computerSelection) {
+        return "Wow, It's a tie!";
+ } else if (
+   (playerSelection + computerSelection === "rockscissors") ||
+   (playerSelection + computerSelection === "scissorspaper") || 
+   (playerSelection + computerSelection === "paperrock")
+   ) { 
+        ++playerScore; /* add the score for this round */
+        return "Nice, You won!";
+ } else if (
+    (playerSelection + computerSelection === "scissorsrock") ||
+    (playerSelection + computerSelection === "paperscissors") || 
+    (playerSelection + computerSelection === "rockpaper")
+    ) { 
+        ++computerScore;
+        return "Damn, you lost!";
+    } else {
+        return "Please make sure you enter one of these moves: Rock, Paper, or Scissors";
+    }
+
+
+} 
+
+
+console.log(playRound(playerSelection, computerSelection));
+
+
+console.log(`You now have ${playerScore} points against the computer's ${computerScore}`);
+
 
 
 }
