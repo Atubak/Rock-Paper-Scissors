@@ -72,6 +72,7 @@ function game () {
     let playerSelection = "rock";
     let computerSelection = computerPlay();
 
+    console.log("Round 1....... Start!")
 
 
 
@@ -110,11 +111,24 @@ function game () {
  console.log(playRound(playerSelection, computerSelection));
 
 
- console.log(`You now have ${playerScore} points against the computer's ${computerScore}`);
+ console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
 
+ 
+ 
+ /* END OF ROUND 1 */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* ROUND 2 */
+ 
  playerSelection = "rock";
  computerSelection = computerPlay();
 
+ console.log("Round 2....... Start!")
 
 
  function playRound (playerSelection, computerSelection) {
@@ -151,10 +165,172 @@ function game () {
 console.log(playRound(playerSelection, computerSelection));
 
 
-console.log(`You now have ${playerScore} points against the computer's ${computerScore}`);
+console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
+
+/* END OF ROUND 2 */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* ROUND 3 */
+
+ playerSelection = "rock";
+ computerSelection = computerPlay();
+
+ console.log("Round 3....... Start!")
+
+ function playRound (playerSelection, computerSelection) {
+
+    
+    console.log(`It's ${playerSelection} versus ${computerSelection}!`);
 
 
 
+ if (playerSelection === computerSelection) {
+        return "Wow, It's a tie!";
+ } else if (
+   (playerSelection + computerSelection === "rockscissors") ||
+   (playerSelection + computerSelection === "scissorspaper") || 
+   (playerSelection + computerSelection === "paperrock")
+   ) { 
+        ++playerScore; /* add the score for this round */
+        return "Nice, You won!";
+ } else if (
+    (playerSelection + computerSelection === "scissorsrock") ||
+    (playerSelection + computerSelection === "paperscissors") || 
+    (playerSelection + computerSelection === "rockpaper")
+    ) { 
+        ++computerScore;
+        return "Damn, you lost!";
+    } else {
+        return "Please make sure you enter one of these moves: Rock, Paper, or Scissors";
+    }
+
+
+} 
+
+
+console.log(playRound(playerSelection, computerSelection));
+
+
+console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
+
+
+/* END OF ROUND 3 */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* ROUND 4 */
+
+ playerSelection = "rock";
+ computerSelection = computerPlay();
+
+ console.log("Round 4....... Start!")
+
+ function playRound (playerSelection, computerSelection) {
+
+    
+    console.log(`It's ${playerSelection} versus ${computerSelection}!`);
+
+
+
+ if (playerSelection === computerSelection) {
+        return "Wow, It's a tie!";
+ } else if (
+   (playerSelection + computerSelection === "rockscissors") ||
+   (playerSelection + computerSelection === "scissorspaper") || 
+   (playerSelection + computerSelection === "paperrock")
+   ) { 
+        ++playerScore; /* add the score for this round */
+        return "Nice, You won!";
+ } else if (
+    (playerSelection + computerSelection === "scissorsrock") ||
+    (playerSelection + computerSelection === "paperscissors") || 
+    (playerSelection + computerSelection === "rockpaper")
+    ) { 
+        ++computerScore;
+        return "Damn, you lost!";
+    } else {
+        return "Please make sure you enter one of these moves: Rock, Paper, or Scissors";
+    }
+
+
+} 
+
+
+console.log(playRound(playerSelection, computerSelection));
+
+
+console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
+
+
+/* END OF ROUND 4 */
+ 
+ 
+ 
+ 
+ 
+ 
+ /* ROUND 5 */
+
+ playerSelection = "rock";
+ computerSelection = computerPlay();
+
+ console.log("Round 5....... Start!")
+
+ function playRound (playerSelection, computerSelection) {
+
+    
+    console.log(`It's ${playerSelection} versus ${computerSelection}!`);
+
+
+
+ if (playerSelection === computerSelection) {
+        return "Wow, It's a tie!";
+ } else if (
+   (playerSelection + computerSelection === "rockscissors") ||
+   (playerSelection + computerSelection === "scissorspaper") || 
+   (playerSelection + computerSelection === "paperrock")
+   ) { 
+        ++playerScore; /* add the score for this round */
+        return "Nice, You won!";
+ } else if (
+    (playerSelection + computerSelection === "scissorsrock") ||
+    (playerSelection + computerSelection === "paperscissors") || 
+    (playerSelection + computerSelection === "rockpaper")
+    ) { 
+        ++computerScore;
+        return "Damn, you lost!";
+    } else {
+        return "Please make sure you enter one of these moves: Rock, Paper, or Scissors";
+    }
+
+
+} 
+
+
+console.log(playRound(playerSelection, computerSelection));
+
+
+console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
+
+
+/* END OF ROUND 5 */
+
+ if (playerScore > computerScore) {
+     return "Wooohoooo, You won the Championship!!!";
+ } else if (playerScore < computerScore) {
+     return "Oh no! The computer totally wrecked you :(";
+ } else if (playerScore === computerScore) {
+     return "Wow that was a close call, play again to find out if you can beat the computer!";
+ }
 }
 
 
