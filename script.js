@@ -57,37 +57,49 @@ function playRound (playerSelection, computerSelection) {
 
 } 
 */
+let results = document.querySelector('#results');
+
 alert("Welcome to the classic game of Rock, Paper, Scissors!")
 /* write a prompt to get input from the user */
-let userPlay =  window.prompt( "Please write down your move here.")
+let userPlay =  "nothing yet";
+
+let buttons = document.querySelectorAll('.playerMove');
+buttons.forEach(button => button.addEventListener('click', getBtnAndCallGame));
+
+function getBtnAndCallGame(e) {
+    userPlay = e.target.id;
+
+    game();
+}
+
+let playerScore = 0
+let computerScore = 0
 
 
-/* Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
-*/
 
 
+function game () {
 
     
-    let playerScore = 0
-    let computerScore = 0
 
-   /* console.log(`You now have ${playerScore} points against the computer's ${computerScore}`); */
 
     /* assigning the player's move and the computer's move */
     let playerSelection = userPlay.toLowerCase();
-    console.log(playerSelection);
+
     let computerSelection = computerPlay();
 
-    console.log("Round 1....... Start!")
 
 
 
- function playRound (playerSelection, computerSelection) {
+    function playRound (playerSelection, computerSelection) {
 
     
     
-        console.log(`It's ${playerSelection} versus ${computerSelection}!`);
+        //console.log(`It's ${playerSelection} versus ${computerSelection}!`);
 
+        let moves = document.createElement('p');
+        moves.textContent = `It's ${playerSelection} versus ${computerSelection}!`;
+        results.appendChild(moves); 
 
     
      if (playerSelection === computerSelection) {
@@ -97,7 +109,7 @@ let userPlay =  window.prompt( "Please write down your move here.")
        (playerSelection + computerSelection === "scissorspaper") || 
        (playerSelection + computerSelection === "paperrock")
        ) { 
-            ++playerScore; /* add the score for this round */
+            ++playerScore; //add the score for this round 
             return "Nice, You won!";
      } else if (
         (playerSelection + computerSelection === "scissorsrock") ||
@@ -114,25 +126,58 @@ let userPlay =  window.prompt( "Please write down your move here.")
     } 
 
 
- console.log(playRound(playerSelection, computerSelection));
+ //console.log(playRound(playerSelection, computerSelection));
 
+ let roundResult = document.createElement('h3');
+ roundResult.textContent = `${playRound(playerSelection, computerSelection)}`;
+ results.appendChild(roundResult);
 
- console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
+ //console.log(`You now have ${playerScore} point(s) against the computer's ${computerScore}`);
+
+ let pointTally = document.createElement('p');
+ pointTally.textContent = `You now have ${playerScore} point(s) against the computer's ${computerScore}`;
+ results.appendChild(pointTally);
 
  
  
  /* END OF ROUND 1 */
  
  
- 
-/*
- if (playerScore > computerScore) {
-     return "Wooohoooo, You won the Championship!!!";
- } else if (playerScore < computerScore) {
-     return "Oh no! The computer totally wrecked you :(";
+
+
+let endGame = document.createElement('h1');
+
+
+ if (playerScore === 5) {
+     endGame.textContent = "Wooohoooo, You won the Championship!!!";
+ } else if (computerScore === 5) {
+     endGame.textContent = "Oh no! The computer totally wrecked you :(";
  } else if (playerScore === computerScore) {
      return "Wow that was a close call, play again to find out if you can beat the computer!";
- }*/
+ }
+
+ results.appendChild(endGame);
+
+}
 
 
+
+/* call the function */
 //console.log(game());
+
+
+
+
+
+/*
+let userPlay = "nothing yet";
+
+let buttons = document.querySelectorAll('.playerMove');
+buttons.forEach(button => button.addEventListener('click', getBtnAndCallplayRound));
+
+function getBtnAndCallplayRound(e) {
+    userPlay = e.target.id;
+    console.log(userPlay);
+    console.log(playRound(playerSelection, computerSelection));
+} 
+*/

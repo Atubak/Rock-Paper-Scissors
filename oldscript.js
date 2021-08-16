@@ -347,3 +347,20 @@ console.log(`You now have ${playerScore} point(s) against the computer's ${compu
 
 /* call the function */
 console.log(game());
+
+
+
+
+
+/*
+let userPlay = "nothing yet";
+
+let buttons = document.querySelectorAll('.playerMove');
+buttons.forEach(button => button.addEventListener('click', getBtnAndCallplayRound));
+
+function getBtnAndCallplayRound(e) {
+    userPlay = e.target.id;
+    console.log(userPlay);
+    console.log(playRound(playerSelection, computerSelection));
+} 
+*/
