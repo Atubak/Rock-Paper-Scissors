@@ -75,6 +75,7 @@ function getBtnAndCallGame(e) {
 let playerScore = 0
 let computerScore = 0
 
+let roundTally = 1;
 
 
 
@@ -91,10 +92,15 @@ function game () {
 
 
 
+
     function playRound (playerSelection, computerSelection) {
 
     
-    
+        let roundTallyAnnouncement = document.createElement('p');
+        roundTallyAnnouncement.textContent = `Round ${roundTally}...........START!`;
+        results.appendChild(roundTallyAnnouncement);
+        roundTally++;
+
         //console.log(`It's ${playerSelection} versus ${computerSelection}!`);
 
         let moves = document.createElement('p');
@@ -138,7 +144,6 @@ function game () {
  pointTally.textContent = `You now have ${playerScore} point(s) against the computer's ${computerScore}`;
  results.appendChild(pointTally);
 
- 
  
  /* END OF ROUND 1 */
  
